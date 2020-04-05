@@ -1,0 +1,84 @@
+553195568034349087 , client ID
+hT1qPe5xEjl2aFMOvzhtfSVxBMI4WvTf , client secret
+https://discordapp.com/api/oauth2/authorize?client_id=157730590492196864&scope=bot&permissions=1, example link for bots
+https://discord.gg/rJxSdKS ,  server invite link
+https://discordapp.com/api/oauth2/authorize?client_id=553195568034349087&scope=bot&permissions=0, link for bots
+
+bot.on('message', (message) => {
+
+
+    if (!message.content.startsWith(prefix) || message.author.bot) return;
+
+    const args = message.content.slice(prefix.length).split(/ +/);
+    const command = args.shift().toLowerCase();
+
+    if(command === "hello")
+    {
+        message.reply(`i fucking hate anyone with letters in their name`);
+    }
+
+    if (command === 'bestgirl')
+    {
+        message.channel.send(`Taiga aisaka of course`);
+    }
+
+    else if (command === 'bestanime')
+    {
+        message.channel.send(`kokoro connect ofc`);
+    }
+
+    else if (command === 'bestperson')
+    {
+        message.channel.send(`Wong Wen Ping Bryan ofc`);
+    }
+    else if (command === 'bestphrase')
+    {
+        message.channel.send(`POMFPOMFPOMF =3`);
+    }
+    else if (command === 'song')
+    {
+        message.channel.send(`https://www.youtube.com/watch?v=6UlBUfRb83k`);
+    }
+    else if (command === 'args-info')
+    {
+        if (!args.length)
+        {
+            return message.channel.send(`no arguments send bro, ${message.author} `);
+        }
+        message.channel.send(`Command name: ${prefix}${command} \nArguments: ${args}`);
+        message.channel.send(`Argument length: ${args.length}`);
+    }
+    else if (command === 'avatar') 
+    {
+        if (!message.mentions.users.size) // Return user avatar if no mention
+        {
+            return message.channel.send(`Your avatar: <${message.author.displayAvatarURL}>`);
+        }
+    
+        const avatarList = message.mentions.users.map(user => {
+            return `${user.username}'s avatar: <${user.displayAvatarURL}>`;
+        });
+
+        message.channel.send(avatarList);
+    }
+    else if (command === 'prune') 
+    {
+        const amount = parseInt(args[0]) + 1;
+    
+        if (isNaN(amount)) 
+        {
+            return message.reply('that doesn\'t seem to be a valid number.');
+        }
+        else if (amount <= 1 || amount > 100)
+        {
+            return message.reply(`Enter a number that is between 1 and 100.`)
+        }
+        message.channel.bulkDelete(amount, true).catch(err =>{
+            console.error(err);
+            message.channel.send(`There appears to be an error with pruning messages.`); 
+            // maybe one day make it so that you give an error, then send something saying what kind of error it is?
+        }
+
+        );
+    }
+});

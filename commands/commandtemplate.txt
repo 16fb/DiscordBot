@@ -1,0 +1,12 @@
+module.exports = {
+	name: '',
+    description: '',
+    aliases: [''],
+    args: false,
+    usage: '<> <>',
+    guildOnly: false,
+    execute(message, args)
+    {
+        //code here
+	},
+};

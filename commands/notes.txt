@@ -1,0 +1,35 @@
+API for nhentai
+// main link
+https://nhentai.net
+
+//Search for comics
+/api/galleries/search?query={QUERY}
+
+//Search for related comics
+/api/gallery/{BOOK_ID}/related
+
+//Search for tag
+/api/galleries/tagged?tag_id={TAG_ID}
+
+//Get details of a certain book
+/api/gallery/{BOOK_ID}
+
+//Get page of book
+/galleries/{MEDIA_ID}/{PAGE}.jpg
+
+//Get thumbnail of book
+/galleries/{MEDIA_ID}/{PAGE}t.jpg
+
+//Get the cover of the book
+/galleries/{MEDIA_ID}/cover.jpg
+
+
+
+// Progress log
+serach is abit funny when only one result obtained
+
+args is a string array
+
+
+// TO-DO
+result validation for nhentai.js 
