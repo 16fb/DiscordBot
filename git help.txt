@@ -1,0 +1,1 @@
+Everything but config file is placed in Git
