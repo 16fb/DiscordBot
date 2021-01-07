@@ -64,7 +64,7 @@ bot.on('message', (message) =>
     // Check command exists
     if (!command)
     { 
-        message.reply('there is no such command.');
+        //#region message.reply('there is no such command.');
         return;
     }
 
