@@ -12,7 +12,7 @@ module.exports = {
 		//const name = bot.commands.get(all);
 		//message.channel.send(` testing + ${name} `)
 
-		/* Show usage of specific help*/ 
+		/* Show usage of specific help*/
 		if (false)
 		{
 			bot.getcommand(args)
