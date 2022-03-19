@@ -1,5 +1,8 @@
 # DiscordBot
-Discord bot code
+
+## Context
+Lagi Bagus Bot
+
 
 
 
